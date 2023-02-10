@@ -9,5 +9,5 @@ class Inference(Worker):
 
     def forward(self, data):
         print("receive request:", data)
-        sleep(sum(int(req.get("time", 0)) for req in data))
+        sleep(sum(float(req.get("time", 0)) for req in data))
         return data
