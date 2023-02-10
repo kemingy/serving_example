@@ -1,6 +1,6 @@
 import logging
 
-from mosec import Server, Worker
+from mosec import Server
 
 from demo.main import Inference
 
@@ -14,12 +14,7 @@ sh.setFormatter(formatter)
 logger.addHandler(sh)
 
 
-class Demo(Inference, Worker):
-    pass
-
-
 if __name__ == "__main__":
-    # klass = type(Inference.__name__, (Inference, Worker), {})
     server = Server()
-    server.append_worker(Demo, max_batch_size=8)
+    server.append_worker(Inference, max_batch_size=8)
     server.run()
