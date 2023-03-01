@@ -9,5 +9,5 @@ docker buildx build -t kemingy/serving-demo . --push
 Use the existing image:
 
 ```shell
-docker run --rm -p 8080 kemingy/serving-demo
+docker run --rm -p 8080:8080 kemingy/serving-demo
 ```
