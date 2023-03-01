@@ -10,8 +10,6 @@ WORKDIR /opt
 
 COPY . /opt
 
-ENV RUST_LOG debug
-
 ENTRYPOINT ["python", "/opt/server.py"]
 CMD ["--port", "8080"]
 
