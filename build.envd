@@ -1,0 +1,16 @@
+# syntax=v1
+
+
+def build():
+    base(dev=True)
+    install.conda()
+    install.python()
+    install.python_packages(name=["mosec"])
+
+
+def serving():
+    base()
+    install.python()
+    install.python_packages(name=["mosec"])
+    io.copy(".", "/")
+    config.entrypoint(["python", "server.py"])
